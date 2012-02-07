@@ -4,3 +4,4 @@ dist/
 *.so
 *.swp
 /docs
+.DS_Store
