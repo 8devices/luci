@@ -446,7 +446,7 @@ $(eval $(call application,pbx,LuCI PBX Administration,\
 $(eval $(call application,pbx-voicemail,LuCI PBX Administration Voicemail Support,\
 	luci-app-pbx +PACKAGE_luci-app-pbx-voicemail:msmtp))
 
-$(eval $(call application,lqtapifoss,Lantiq voip))
+$(eval $(call application,ltqtapi,Lantiq voip))
 
 ### Server Gateway Interfaces ###
 define sgi
@@ -503,19 +503,13 @@ endef
 
 $(eval $(call theme,base,Common base for all themes))
 $(eval $(call theme,openwrt,OpenWrt.org (default),,,1))
-$(eval $(call theme,fledermaus,Fledermaus Theme))
-
-$(eval $(call theme,freifunk,alternative Freifunk Theme,\
-	Stefan Pirwitz <stefan-at-freifunk-bno-dot-de>))
+$(eval $(call theme,bootstrap,Bootstrap Theme))
 
 $(eval $(call theme,freifunk-bno,Freifunk Berlin Nordost Theme,\
 	Stefan Pirwitz <stefan-at-freifunk-bno-dot-de>))
 
-$(eval $(call theme,freifunk-hannover,Freifunk Hannover Theme,\
-	Mikolas Bingemer <mickey-at-freifunk-hannover-dot-de>))
-
 $(eval $(call theme,freifunk-generic,Freifunk Generic Theme,\
-        Manuel Munz <freifunk-at-somakoma-dot-de>))
+	Manuel Munz <freifunk-at-somakoma-dot-de>))
 
 ### Translations ###
 define translation
