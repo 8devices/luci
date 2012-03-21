@@ -9,7 +9,7 @@ endif
 AXTLS_VERSION = 1.2.1
 AXTLS_DIR     = axTLS
 AXTLS_FILE    = $(AXTLS_DIR)-$(AXTLS_VERSION).tar.gz
-NIXIO_TLS    ?= openssl
+#NIXIO_TLS    ?= openssl
 NIXIO_SHADOW ?= $(shell echo 'int main(void){ return !getspnam("root"); }' | $(CC) -include shadow.h -xc -o/dev/null - 2>/dev/null && echo yes)
 NIXIO_SO      = nixio.so
 NIXIO_LDFLAGS =
@@ -90,7 +90,7 @@ src/axtls-compat.o: src/libaxtls.a src/axtls-compat.c
 endif	
 
 compile: $(NIXIO_OBJ)
-	$(LINK) $(SHLIB_FLAGS) $(NIXIO_LDFLAGS) -o src/$(NIXIO_SO) $(NIXIO_OBJ) $(NIXIO_LDFLAGS_POST)
+	$(LINK) $(SHLIB_FLAGS) -o src/$(NIXIO_SO) $(NIXIO_OBJ) $(NIXIO_LDFLAGS) $(NIXIO_LDFLAGS_POST)
 	mkdir -p dist$(LUA_LIBRARYDIR)
 	cp src/$(NIXIO_SO) dist$(LUA_LIBRARYDIR)/$(NIXIO_SO)
 
